@@ -25,3 +25,8 @@ alias bright25='brightnessctl set 19200' # 25%
 alias bright50='brightnessctl set 48000' # 50%
 alias bright75='brightnessctl set 72000' # 75%
 alias bright100='brightnessctl set 96000' # 100%
+
+#git
+alias gs='git status' # check git status
+alias gc='git commit -m'
+alias gb='git branch'
