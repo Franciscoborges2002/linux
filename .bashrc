@@ -18,13 +18,19 @@ alias arduinox='arduino-ide --ozone-platform=x11'
 alias cls='clear'
 
 #brightness
-alias bright1='brightnessctl set 1000' # 1%
-alias bright5='brightnessctl set 5000' # 5%
-alias bright10='brightnessctl set 10000' # 10%
-alias bright25='brightnessctl set 19200' # 25%
-alias bright50='brightnessctl set 48000' # 50%
-alias bright75='brightnessctl set 72000' # 75%
-alias bright100='brightnessctl set 96000' # 100%
+bright() {
+    local percent="$1"
+    brightnessctl set "${percent}%"
+}
+
+#sound
+sound() {
+    pactl set-sink-volume @DEFAULT_SINK@ "$1%"
+}
+
+mute() {
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+}
 
 #git
 alias gs='git status' # check git status
